@@ -69,6 +69,23 @@ and in the app module definition add `dcModal` as required module
     - animate       {Boolean}
         when false, modal is not animated when displaying (true by default)
 
+###Overwrite default template folder for your application
+You can set where your templates are located by setting the value of `TEMPLATE_FOLDER`
+after your module's initialization. (If no value is set, the value defaults to `/`)
+
+    angular.module('dcModal')
+        .value('TEMPLATE_FOLDER', 'path/to/templates/folder');
+
+This means when you call `dialogService.create('error');`,
+this will load the template **/path/to/templates/folder/error.html**.
+
+### Set application's default template
+Set application's default template by setting the value of `DEFAULT_TEMPLATE_FILE`
+after your module's initialization. (If no value is set, the value defaults to `templates/default.html`)
+
+    angular.module('dcModal')
+        .value('DEFAULT_TEMPLATE_FILE', 'path/to/default/template.html');
+
 ###Credits
 
 Thanks to [capaj](http://github.com/capaj) for the initial idea.
