@@ -4,11 +4,11 @@ angular.module('dcModal', [])
     .value('DCMODAL_TEMPLATE_FOLDER', null)
     .value('DCMODAL_DEFAULT_TEMPLATE', null)
     .factory('dialogService',
-        ['$q', '$http', '$templateCache', '$timeout', 'DCMODAL_TEMPLATE_FOLDER', 'DCMODAL_DEFAULT_TEMPLATE',
-        function dialogProvider($q, $http, $templateCache, $timeout, DCMODAL_TEMPLATE_FOLDER, DCMODAL_DEFAULT_TEMPLATE) {
+        ['$q', '$http', '$templateCache', '$timeout', 'TEMPLATE_FOLDER', 'DEFAULT_TEMPLATE_FILE',
+        function dialogProvider($q, $http, $templateCache, $timeout, TEMPLATE_FOLDER, DEFAULT_TEMPLATE_FILE) {
 
             var count = 0,
-                defaultTemplate = DCMODAL_DEFAULT_TEMPLATE || 'templates/default.html',
+                defaultTemplate = DEFAULT_TEMPLATE_FILE || 'templates/default.html',
                 allModals = [],
                 openedModals = [];
 
@@ -65,8 +65,8 @@ angular.module('dcModal', [])
                  * Set the default template folder.
                  * If no value set, the default folder will fallback to application root
                  */
-                if(DCMODAL_TEMPLATE_FOLDER)
-                    this._originalTemplate = DCMODAL_TEMPLATE_FOLDER + '/' + template + '.html';
+                if(TEMPLATE_FOLDER)
+                    this._originalTemplate = TEMPLATE_FOLDER + '/' + template + '.html';
                 else
                     this._originalTemplate = '/' + template + '.html';
 

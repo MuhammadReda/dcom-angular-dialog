@@ -2,8 +2,8 @@
 
 angular
     .module('dcModal')
-    .value('DCMODAL_TEMPLATE_FOLDER', 'templates')
-    .value('DCMODAL_DEFAULT_TEMPLATE', 'templates/default.html');
+    .value('TEMPLATE_FOLDER', 'templates')
+    .value('DEFAULT_TEMPLATE_FILE', 'templates/default.html');
 
 angular.module('angularModalDemo')
     .controller('MainCtrl',
