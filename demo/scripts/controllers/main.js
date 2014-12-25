@@ -1,5 +1,10 @@
 'use strict';
 
+angular
+    .module('dcModal')
+    .value('DCMODAL_TEMPLATE_FOLDER', 'templates')
+    .value('DCMODAL_DEFAULT_TEMPLATE', 'templates/default.html');
+
 angular.module('angularModalDemo')
     .controller('MainCtrl',
     ['$scope','dialogService','$timeout',
