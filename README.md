@@ -87,7 +87,6 @@ after your module's initialization. (If no value is set, the value defaults to `
         .value('DEFAULT_TEMPLATE_FILE', 'path/to/default/template.html');
 
 ###Credits
-
 Thanks to [capaj](http://github.com/capaj) for the initial idea.
 
 
@@ -95,7 +94,7 @@ Thanks to [capaj](http://github.com/capaj) for the initial idea.
 Released under MIT licence.
 
 ###Support
-Tested across Angular 1.0.6 - 1.2.14, but probably should be also compatible with other versions.
+Tested across Angular 1.0.6, 1.2.14 and 1.3.8.
 
 If you encounter any problems using this module, contact me via [doodeec.com](http://doodeec.com)
 or [send me an email](mailto:doodeec@gmail.com)
