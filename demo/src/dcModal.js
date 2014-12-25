@@ -12,8 +12,6 @@ angular.module('dcModal', [])
                 allModals = [],
                 openedModals = [];
 
-            console.log(DEFAULT_TEMPLATE_FILE);
-
             function getDialog(prop, value) {
                 for (var i = 0, iMax = allModals.length; i < iMax; i++) {
                     if (allModals[i][prop] == value)
