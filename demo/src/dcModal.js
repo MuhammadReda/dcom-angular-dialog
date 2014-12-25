@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('dcModal', [])
-    .value('DCMODAL_TEMPLATE_FOLDER', null)
-    .value('DCMODAL_DEFAULT_TEMPLATE', null)
+    .value('TEMPLATE_FOLDER', '/')
+    .value('DEFAULT_TEMPLATE_FILE', 'templates/default.html')
     .factory('dialogService',
         ['$q', '$http', '$templateCache', '$timeout', 'TEMPLATE_FOLDER', 'DEFAULT_TEMPLATE_FILE',
         function dialogProvider($q, $http, $templateCache, $timeout, TEMPLATE_FOLDER, DEFAULT_TEMPLATE_FILE) {
 
             var count = 0,
-                defaultTemplate = DEFAULT_TEMPLATE_FILE || 'templates/default.html',
+                defaultTemplate = DEFAULT_TEMPLATE_FILE,
                 allModals = [],
                 openedModals = [];
 
+            console.log(DEFAULT_TEMPLATE_FILE);
 
             function getDialog(prop, value) {
                 for (var i = 0, iMax = allModals.length; i < iMax; i++) {
@@ -61,14 +62,8 @@ angular.module('dcModal', [])
                 this._ready = false;
                 this._loadDirective = $q.defer();
 
-                /**
-                 * Set the default template folder.
-                 * If no value set, the default folder will fallback to application root
-                 */
-                if(TEMPLATE_FOLDER)
-                    this._originalTemplate = TEMPLATE_FOLDER + '/' + template + '.html';
-                else
-                    this._originalTemplate = '/' + template + '.html';
+                //Set the default template folder.
+                this._originalTemplate = TEMPLATE_FOLDER + '/' + template + '.html';
 
                 if (options && angular.isObject(options)) {
 
