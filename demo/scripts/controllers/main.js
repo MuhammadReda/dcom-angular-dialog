@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularModalDemo')
-  .controller('MainCtrl',
+    .controller('MainCtrl',
     ['$scope','dialogService','$timeout',
         function ($scope, dialogService, $timeout) {
 
@@ -45,11 +45,11 @@ angular.module('angularModalDemo')
                     className: 'ctrlDialog',
                     controller: function($scope) {
                         $scope.message = 'This is message injected to the scope via' +
-                            'modal options.';
+                        'modal options.';
                     }
                 };
 
                 var dialog = dialogService.create('ctrl',options);
                 dialog.open();
             };
-  }]);
+        }]);
