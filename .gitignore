@@ -3,3 +3,5 @@ watcherTool.cmd
 node_modules
 demo/bower_components
 demo/src/*.css
+*.DS_Store
+*.sw*
