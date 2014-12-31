@@ -273,7 +273,7 @@ angular.module('dcModal', [])
             }
         }])
     .directive('dcModalWidget',
-    ['dialogService', 'DIALOG_SERVICE_TEMPLATE_URL',
+        ['dialogService', 'DIALOG_SERVICE_TEMPLATE_URL',
         function (dialogService, DIALOG_SERVICE_TEMPLATE_URL) {
             return {
                 restrict: 'EA',
@@ -301,7 +301,7 @@ angular.module('dcModal', [])
             }
         }])
     .directive('dcModal',
-    ['dialogService', '$timeout',
+        ['dialogService', '$timeout',
         function (dialogService, $timeout) {
             return {
                 restrict: 'EA',
@@ -326,7 +326,7 @@ angular.module('dcModal', [])
             }
         }])
     .directive('dcBackdrop',
-    ['dialogService',
+        ['dialogService',
         function (dialogService) {
             return {
                 restrict: 'EA',
@@ -343,7 +343,8 @@ angular.module('dcModal', [])
                 }
             }
         }])
-    .run(['$compile', '$rootScope', '$timeout',
+    .run(
+        ['$compile', '$rootScope', '$timeout',
         function ($compile, $rootScope, $timeout) {
             // insert modal wrapper into the DOM
             $timeout(function () {
