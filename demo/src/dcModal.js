@@ -3,6 +3,7 @@
 angular.module('dcModal', [])
     .value('TEMPLATE_FOLDER', '/')
     .value('DEFAULT_TEMPLATE_FILE', 'templates/default.html')
+    .value('DIALOG_SERVICE_TEMPLATE_URL', 'src/spine.html')
     .factory('dialogService',
         ['$q', '$http', '$templateCache', '$timeout', 'TEMPLATE_FOLDER', 'DEFAULT_TEMPLATE_FILE',
         function dialogProvider($q, $http, $templateCache, $timeout, TEMPLATE_FOLDER, DEFAULT_TEMPLATE_FILE) {
@@ -272,13 +273,13 @@ angular.module('dcModal', [])
             }
         }])
     .directive('dcModalWidget',
-    ['dialogService',
-        function (dialogService) {
+    ['dialogService', 'DIALOG_SERVICE_TEMPLATE_URL',
+        function (dialogService, DIALOG_SERVICE_TEMPLATE_URL) {
             return {
                 restrict: 'EA',
                 priority: 10,
                 replace: true,
-                templateUrl: 'src/spine.html',
+                templateUrl: DIALOG_SERVICE_TEMPLATE_URL,
                 link: function (scope, elem, attrs) {
                     scope.allModals = dialogService.allModals;
                     scope.openedModals = dialogService.openedModals;
